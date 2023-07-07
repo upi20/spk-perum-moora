@@ -170,12 +170,14 @@ function getTable() {
             e.nilais.forEach((j, i) => {
                 let title = 'Nilai Tidak Valid';
                 let danger = true;
+                let view = j ? j.nilai : '';
                 if (j) {
                     danger = j.kirteria_nilai ? false : true;
-                    title = j.kirteria_nilai ? `${j.kirteria_nilai.nilai} | ${j.kirteria_nilai.nama} (${j.kirteria_nilai.dari} - ${j.kirteria_nilai.sampai})` : 'Nilai Tidak Valid';
+                    title = j.kirteria_nilai ? `${j.nilai} | ${j.kirteria_nilai.nama} (${j.kirteria_nilai.dari} - ${j.kirteria_nilai.sampai})` : 'Nilai Tidak Valid';
+                    view = j.kirteria_nilai ? `${j.kirteria_nilai.nama}` : view;
                 }
                 table_body_html_item += ` <td data-toggle="tooltip" title="${title}" class=${danger ? 'text-danger' : ''}>
-                    ${j ? j.nilai : ''}
+                    ${view}
                 </td> `;
             });
 

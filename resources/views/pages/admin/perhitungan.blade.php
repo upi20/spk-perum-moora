@@ -46,12 +46,14 @@
                                 @if ($nilai != null)
                                     @php
                                         $title = 'Nilai Tidak Valid';
+                                        $nilai_view = $nilai->nilai;
                                         if ($nilai->kirteria_nilai) {
-                                            $title = "{$nilai->kirteria_nilai->nilai} | {$nilai->kirteria_nilai->nama} ({$nilai->kirteria_nilai->dari} - {$nilai->kirteria_nilai->sampai})";
+                                            $title = "{$nilai->nilai} | {$nilai->kirteria_nilai->nama} ({$nilai->kirteria_nilai->dari} - {$nilai->kirteria_nilai->sampai})";
+                                            $nilai_view = $nilai->kirteria_nilai->nama;
                                         }
                                     @endphp
                                     <td title="{{ $title }}" data-toggle="tooltip">
-                                        {{ $nilai->nilai }}
+                                        {{ $nilai_view }}
                                     </td>
                                 @else
                                     <td title="Data Tidak Valid" data-toggle="tooltip"></td>

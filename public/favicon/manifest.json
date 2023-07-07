@@ -1,7 +1,7 @@
 {
-    "name": "SPK Wisata Pendakian Bandung Raya",
-    "short_name": "Wipeban",
-    "description": "SISTEM PENDUKUNG KEPUTUSAN REKOMENDASI DESTINASI WISATA PENDAKIAN DI BANDUNG RAYA MENGGUNAKAN METODE MOORA",
+    "name": "SPK Perumahan Ciamis",
+    "short_name": "Perumis",
+    "description": "PENENTUAN LOKASI STRATEGIS PERUMAHAN DI DAERAH CIMAHI DENGAN FUZZY LOGIC",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",

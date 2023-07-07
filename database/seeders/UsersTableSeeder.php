@@ -34,15 +34,15 @@ class UsersTableSeeder extends Seeder
                 'two_factor_confirmed_at' => NULL,
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
-                'remember_token' => 'eCZEvZ0D4HfRmLneUdM6PJ7ncssSYiBG9CZZZImJZyXKqP7q50NlXJJ2fXeY',
+                'remember_token' => 'QMLPNWYB7V8XF14Rrpt3ZoOFfBbj3PHN15li3jwfUzFNyguPl96cggiLHK5z',
                 'created_at' => NULL,
                 'updated_at' => '2023-04-19 17:19:26',
             ),
             1 => 
             array (
                 'id' => 2,
-                'name' => 'Yogi Setiawan',
-                'email' => 'yogis@gmail.com',
+                'name' => 'Alfianto yogatama',
+                'email' => 'yoga@gmail.com',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
@@ -55,7 +55,7 @@ class UsersTableSeeder extends Seeder
                 'profile_photo_path' => NULL,
                 'remember_token' => NULL,
                 'created_at' => '2023-07-01 23:09:58',
-                'updated_at' => '2023-07-01 23:09:58',
+                'updated_at' => '2023-07-07 17:38:12',
             ),
         ));
         
