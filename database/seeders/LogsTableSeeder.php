@@ -494,7 +494,7 @@ class LogsTableSeeder extends Seeder
                 'log_date' => '2023-06-01 16:20:45',
                 'table_name' => 'calon',
                 'log_type' => 'create',
-                'data' => '{"kecamatan_id":"1","nama":"ISEP LUTPI NUR","nomor_pendaftaran":"KABCMS0001","jenis_kelamin":"LAKI-LAKI","tanggal_lahir":"1965-08-10","nomor_telepon":"0835841","updated_at":"2023-06-01T09:20:45.000000Z","created_at":"2023-06-01T09:20:45.000000Z","id":885}',
+                'data' => '{"kecamatan_id":"1","nama":"Suepr Admin","nomor_pendaftaran":"KABCMS0001","jenis_kelamin":"LAKI-LAKI","tanggal_lahir":"1965-08-10","nomor_telepon":"0835841","updated_at":"2023-06-01T09:20:45.000000Z","created_at":"2023-06-01T09:20:45.000000Z","id":885}',
             ),
             53 => 
             array (
@@ -503,7 +503,7 @@ class LogsTableSeeder extends Seeder
                 'log_date' => '2023-06-01 16:20:51',
                 'table_name' => 'calon',
                 'log_type' => 'delete',
-                'data' => '{"id":885,"kecamatan_id":1,"nama":"ISEP LUTPI NUR","nomor_pendaftaran":"KABCMS0001","jenis_kelamin":"LAKI-LAKI","tanggal_lahir":"1965-08-10","nomor_telepon":"0835841","import_id":null,"created_at":"2023-06-01 16:20:45","updated_at":"2023-06-01 16:20:45"}',
+                'data' => '{"id":885,"kecamatan_id":1,"nama":"Suepr Admin","nomor_pendaftaran":"KABCMS0001","jenis_kelamin":"LAKI-LAKI","tanggal_lahir":"1965-08-10","nomor_telepon":"0835841","import_id":null,"created_at":"2023-06-01 16:20:45","updated_at":"2023-06-01 16:20:45"}',
             ),
             54 => 
             array (
@@ -25272,7 +25272,7 @@ class LogsTableSeeder extends Seeder
                 'log_date' => '2023-07-07 16:33:11',
                 'table_name' => 'users',
                 'log_type' => 'edit',
-                'data' => '{"id":1,"name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"202304182058334.png","username":null,"email_verified_at":null,"password":"$2y$10$n3MdfR0wImKMgwM6WnOH6.7vZQAdIQcv7gt1jWI47C.wKN3LwXx2O","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"eCZEvZ0D4HfRmLneUdM6PJ7ncssSYiBG9CZZZImJZyXKqP7q50NlXJJ2fXeY","created_at":null,"updated_at":"2023-04-19 17:19:26"}',
+                'data' => '{"id":1,"name":"Suepr Admin","email":"superadmin@gmail.com","foto":"202304182058334.png","username":null,"email_verified_at":null,"password":"$2y$10$n3MdfR0wImKMgwM6WnOH6.7vZQAdIQcv7gt1jWI47C.wKN3LwXx2O","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"eCZEvZ0D4HfRmLneUdM6PJ7ncssSYiBG9CZZZImJZyXKqP7q50NlXJJ2fXeY","created_at":null,"updated_at":"2023-04-19 17:19:26"}',
             ),
             305 => 
             array (
@@ -25290,7 +25290,7 @@ class LogsTableSeeder extends Seeder
                 'log_date' => '2023-07-07 16:33:52',
                 'table_name' => 'users',
                 'log_type' => 'edit',
-                'data' => '{"id":1,"name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"202304182058334.png","username":null,"email_verified_at":null,"password":"$2y$10$n3MdfR0wImKMgwM6WnOH6.7vZQAdIQcv7gt1jWI47C.wKN3LwXx2O","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"uEcShfkQ3yCAKwGA3mXqEsfsV2xWvKWD8oPsm7yh4NvjCeacj0NDyxgYgEDm","created_at":null,"updated_at":"2023-04-19 17:19:26"}',
+                'data' => '{"id":1,"name":"Suepr Admin","email":"superadmin@gmail.com","foto":"202304182058334.png","username":null,"email_verified_at":null,"password":"$2y$10$n3MdfR0wImKMgwM6WnOH6.7vZQAdIQcv7gt1jWI47C.wKN3LwXx2O","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"uEcShfkQ3yCAKwGA3mXqEsfsV2xWvKWD8oPsm7yh4NvjCeacj0NDyxgYgEDm","created_at":null,"updated_at":"2023-04-19 17:19:26"}',
             ),
             307 => 
             array (
