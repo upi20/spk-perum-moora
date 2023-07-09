@@ -1,4 +1,4 @@
-@extends('layouts.admin.master')
+@extends('layouts.admin.sash.master')
 
 @section('content')
     <div class="card mt-3">

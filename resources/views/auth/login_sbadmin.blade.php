@@ -8,16 +8,20 @@ $page_attr = (object) [
     'navigation' => isset($page_attr['navigation']) ? $page_attr['navigation'] : false,
     'loader' => isset($page_attr['loader']) ? $page_attr['loader'] : setting_get(set_admin('app.preloader')),
     'breadcrumbs' => isset($page_attr['breadcrumbs']) ? (is_array($page_attr['breadcrumbs']) ? $page_attr['breadcrumbs'] : false) : false,
-    'url' => isset($page_attr['url']) ? $page_attr['url'] : url(''),
-    'type' => isset($page_attr['type']) ? $page_attr['type'] : 'website',
 ];
 $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . setting_get(set_admin('app.title'), env('APP_NAME'));
-$notifikasi = beTopNotification();
 ?>
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('favicon/favicon.ico') }}">
     <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('favicon/apple-icon-57x57.png') }}">
@@ -38,11 +42,7 @@ $notifikasi = beTopNotification();
     <meta name="theme-color" content="#0191D7">
     <meta name="msapplication-TileImage" content="{{ asset('favicon/icon-144x144.png') }}">
 
-    <!-- META DATA -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ $page_attr_title }}</title>
 
     <!-- SEO -->
     <!-- Primary Meta Tags -->
@@ -70,81 +70,75 @@ $notifikasi = beTopNotification();
     <meta itemprop="description" content="{{ $page_attr->description }}">
     <meta itemprop="image" content="{{ $page_attr->image }}">
 
-    <!--plugins-->
-    <link href="{{ asset_admin('plugins/simplebar/css/simplebar.css', name: 'rockeradmin') }}" rel="stylesheet" />
-    <link href="{{ asset_admin('plugins/metismenu/css/metisMenu.min.css', name: 'rockeradmin') }}" rel="stylesheet" />
+    <!-- Custom fonts for this template-->
+    <link rel="stylesheet" href="{{ asset_admin('vendor/fontawesome-free/css/all.min.css', name: 'sbadmin') }}" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
-    @if ($page_attr->loader)
-        <!-- loader-->
-        <link href="{{ asset_admin('css/pace.min.css', name: 'rockeradmin') }}" rel="stylesheet" />
-        <script src="{{ asset_admin('js/pace.min.js', name: 'rockeradmin') }}"></script>
-    @endif
-
-    <!-- Bootstrap CSS -->
-    <link href="{{ asset_admin('css/bootstrap.min.css', name: 'rockeradmin') }}" rel="stylesheet">
-    <link href="{{ asset_admin('css/bootstrap-extended.css', name: 'rockeradmin') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link href="{{ asset_admin('css/app.css', name: 'rockeradmin') }}" rel="stylesheet">
-    <link href="{{ asset_admin('css/icons.css', name: 'rockeradmin') }}" rel="stylesheet">
-
-    <!-- Theme Style CSS -->
-    <link rel="stylesheet" href="{{ asset_admin('css/dark-theme.css', name: 'rockeradmin') }}" />
-    <link rel="stylesheet" href="{{ asset_admin('css/semi-dark.css', name: 'rockeradmin') }}" />
-    <link rel="stylesheet" href="{{ asset_admin('css/header-colors.css', name: 'rockeradmin') }}" />
-    <link rel="stylesheet"
-        href="{{ asset_admin('plugins/fontawesome-free-5.15.4-web/css/all.min.css', name: 'sash') }}">
-
-    <!-- CSS PLUGINS -->
-    @yield('stylesheet')
-
-    <!-- Dark mode-->
-    <script>
-        const templateHasDarkMode = localStorage.getItem('dark-mode') == 'true';
-        const templateTheme = localStorage.getItem('theme');
-        if (localStorage.getItem('dark-mode') !== null) {
-            if (templateHasDarkMode) {
-                document.querySelector('html').setAttribute('class', 'dark-theme');
-            } else {
-                document.querySelector('html').classList.remove("dark-theme");
-                if (templateTheme) {
-                    document.querySelector('html').classList.add(templateTheme);
-                }
-            }
-        }
-    </script>
+    <!-- Custom styles for this template-->
+    <link rel="stylesheet" href="{{ asset_admin('css/sb-admin-2.min.css', name: 'sbadmin') }}" />
 
     @foreach (json_decode(setting_get(set_admin('meta_list'), '{}')) as $meta)
         <!-- custom {{ $meta->name }} -->
         {!! $meta->value !!}
     @endforeach
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <style>
-        .page-footer {
-            border: none;
-            position: fixed;
-            left: 0;
-        }
-    </style>
 </head>
 
-<body>
-    <div class="container  mb-5">
-        @yield('content')
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-6 col-lg-6 col-md-12">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <div class="p-5">
+                            <div class="text-center mb-3">
+                                <img src="{{ asset(setting_get(set_admin('app.foto_dark_landscape_mode'))) }}"
+                                    style="max-height: 65px;" alt="Logo" />
+                            </div>
+                            <form class="user" id="Loginform">
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-user" id="email"
+                                        name="email" aria-describedby="emailHelp"
+                                        placeholder="Enter Email Address...">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control form-control-user" id="password"
+                                        placeholder="Password" name="password">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
+                                    Login
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-    <!--end page wrapper -->
-    @include('layouts.admin.rockeradmin.body.footer')
-    <!--end wrapper-->
 
-    <!-- Bootstrap JS -->
-    <script src="{{ asset_admin('js/bootstrap.bundle.min.js', name: 'rockeradmin') }}"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ asset_admin('vendor/jquery/jquery.min.js', name: 'sbadmin') }}"></script>
+    <script src="{{ asset_admin('vendor/bootstrap/js/bootstrap.bundle.min.js', name: 'sbadmin') }}"></script>
 
-    <!--plugins-->
-    <script src="{{ asset_admin('js/jquery.min.js', name: 'rockeradmin') }}"></script>
-    <script src="{{ asset_admin('plugins/simplebar/js/simplebar.min.js', name: 'rockeradmin') }}"></script>
-    <script src="{{ asset_admin('plugins/metismenu/js/metisMenu.min.js', name: 'rockeradmin') }}"></script>
-    <script src="{{ resource_loader('pages/admin/admin.js') }}"></script>
-    <script src="{{ resource_loader('app.js') }}"></script>
-    @yield('javascript')
+    <!-- Core plugin JavaScript-->
+    <script src="{{ asset_admin('vendor/jquery-easing/jquery.easing.min.js', name: 'sbadmin') }}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{ asset_admin('js/sb-admin-2.min.js', name: 'sbadmin') }}"></script>
+
+    <script src="{{ asset_admin('plugins/sweet-alert/sweetalert2.all.js', name: 'sash') }}"></script>
+    <script src="{{ resource_loader('pages/admin/auth/login_sbadmin.js', params: ['redirect' => $redirect]) }}"></script>
+
 </body>
 
 </html>

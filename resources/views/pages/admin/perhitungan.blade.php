@@ -1,4 +1,4 @@
-@extends('layouts.admin.master')
+@extends('layouts.admin.sash.master')
 
 @section('content')
     <div class="card radius-10 border-start border-0 border-4 border-primary mt-4">
@@ -283,12 +283,13 @@
 @endsection
 
 @section('stylesheet')
-    <link rel="stylesheet" href="{{ asset_admin('plugins/datatable/css/dataTables.bootstrap5.min.css') }}" />
+    <link rel="stylesheet"
+        href="{{ asset_admin('plugins/datatable/css/dataTables.bootstrap5.min.css', name: 'rockeradmin') }}" />
 @endsection
 
 @section('javascript')
-    <script src="{{ asset_admin('plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset_admin('plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset_admin('plugins/datatable/js/jquery.dataTables.min.js', name: 'rockeradmin') }}"></script>
+    <script src="{{ asset_admin('plugins/datatable/js/dataTables.bootstrap5.min.js', name: 'rockeradmin') }}"></script>
     <script src="{{ asset_admin('plugins/loading/loadingoverlay.min.js', name: 'sash') }}"></script>
     @php
         $resource = resource_loader(blade_path: $view);
