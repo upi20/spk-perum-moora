@@ -45,10 +45,9 @@
                                 <a href="javascript:void(0)" data-bs-toggle="dropdown"
                                     class="nav-link leading-none d-flex">
                                     @php
-                                        $templateProfileFoto = auth()->user()->foto ? asset('assets/profile/' . auth()->user()->foto) : asset_admin('images/profile.png');
+                                        $templateProfileFoto = auth()->user()->foto ? asset('assets/profile/' . auth()->user()->foto) : '/assets/profile.png';
                                     @endphp
-                                    <img onerror="this.src='{{ $templateProfileFoto }}';this.onerror='';"
-                                        src="{{ $templateProfileFoto }}" alt="profile-user"
+                                    <img src="{{ $templateProfileFoto }}" alt="profile-user"
                                         class="avatar  profile-user brround cover-image" id="header_foto_profile">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
